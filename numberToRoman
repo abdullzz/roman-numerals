@@ -11,3 +11,5 @@ function numberToRoman(num){
     
     return result
 }
+
+console.log(numberToRoman(1954))
