@@ -1,4 +1,7 @@
 function toRoman(num){
+    if(num<1 || num>3000){
+        return 'Hanya menerima angka 1 sampai 3000'
+    }
     let str = String(num).split('').reverse()
     let res = []
     
