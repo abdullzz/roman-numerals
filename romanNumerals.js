@@ -1,49 +1,18 @@
 function toRoman(num) {
   let hasil = ""
+  
+  let roman = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
+  let number = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
 
+  let index = 0
   while(num > 0) {
-    if (num >= 1000) {
-      num -= 1000
-      hasil += "M"
-    } else if (num >= 900){
-      num -= 900
-      hasil += "CM"
-    }else if (num >= 500) {
-      num -= 500
-      hasil += "D"
-    } else if (num >= 400){
-      num -= 400
-      hasil += "CD"
-    }else if (num >= 100) {
-      num -= 100
-      hasil += "C"
-    } else if (num >= 90){
-      num -= 90
-      hasil += "XC"
-    }else if (num >= 50) {
-      num -= 50
-      hasil += "L"
-    } else if (num >= 40){
-      num -= 40
-      hasil += "XL"
-    }else if (num >= 10) {
-      num -= 10
-      hasil += "X"
-    } else if (num >= 9){
-      num -= 9
-      hasil += "IX"
-    }else if (num >= 5) {
-      num -= 5
-      hasil += "V"
-    } else if (num >= 4) {
-      num -= 4
-      hasil += "IV"
-    } else if (num >= 1) {
-      num -= 1
-      hasil += "I"
+    if (num >= number[index]) {
+      hasil += roman[index]
+      num -= number[index]
+    } else if (num < number[index]) {
+      index++
     }
   }
-
   return hasil
 }
 
